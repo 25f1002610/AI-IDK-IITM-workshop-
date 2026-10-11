@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #EBE9E4;
+    --bg-secondary: #E3E0DA;
+    --bg-card: #F4F2EE;
+    --bg-card-hover: #ECE9E2;
+    --border-color: #D6D2C8;
+    --border-subtle: #DFDBD1;
+    --text-primary: #1C1B1A;
+    --text-secondary: #575550;
+    --text-muted: #828078;
+    --accent: #252422;
+    --accent-glow: rgba(37, 36, 34, 0.08);
+    --tool-search-bg: #EAF1F8;
+    --tool-search-border: #BCD3EB;
+    --tool-search-accent: #2A68A5;
+    --tool-calc-bg: #EAF5EE;
+    --tool-calc-border: #BCDECA;
+    --tool-calc-accent: #237A4B;
+    --tool-text-bg: #F5EFE8;
+    --tool-text-border: #DECBB7;
+    --tool-text-accent: #9A5A1B;
+  }
+
+  .dark {
+    --bg-primary: #121110;
+    --bg-secondary: #191816;
+    --bg-card: #1E1D1A;
+    --bg-card-hover: #262421;
+    --border-color: #2F2D28;
+    --border-subtle: #252420;
+    --text-primary: #EDEBE6;
+    --text-secondary: #A8A59D;
+    --text-muted: #6B6860;
+    --accent: #F4F2EE;
+    --accent-glow: rgba(244, 242, 238, 0.08);
+    --tool-search-bg: #132230;
+    --tool-search-border: #1E3F5E;
+    --tool-search-accent: #78B4ED;
+    --tool-calc-bg: #12281D;
+    --tool-calc-border: #1E4E36;
+    --tool-calc-accent: #74D29F;
+    --tool-text-bg: #281D12;
+    --tool-text-border: #52371E;
+    --tool-text-accent: #E5A362;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom editorial typography utility classes */
+.font-editorial {
+  font-family: "Georgia", "Cambria", "Times New Roman", serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono-code {
+  font-family: "Consolas", "Courier New", monospace;
+}
+
+/* Disordered Grid background lines */
+.bg-grid-pattern {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
