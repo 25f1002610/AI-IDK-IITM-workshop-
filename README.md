@@ -21,27 +21,34 @@ Aster AI is powered by a single Google ADK root agent (`personal_assistant`) reg
 ├── task1_personal_assistant/         # Core Google ADK Backend Package
 │   ├── personal_assistant/           # Agent and tools module
 │   │   ├── agent.py                  # Root agent definition & Google ADK registration
+│   │   ├── __init__.py
 │   │   └── tools/
 │   │       ├── calculator.py         # AST safe calculator implementation
-│   │       └── text_analyzer.py      # Text metrics implementation
+│   │       ├── text_analyzer.py      # Text metrics implementation
+│   │       └── __init__.py
 │   ├── tests/                        # 28 passing pytest test cases
+│   ├── assets/                       # UI demonstration screenshots
 │   ├── api_server.py                 # FastAPI bridge with CORS support
 │   ├── pyproject.toml                # Project packaging configuration
 │   ├── requirements.txt              # Python dependencies
-│   ├── .env.example                  # Environment template
-│   └── README.md                     # Backend-specific documentation
+│   └── .env.example                  # Safe environment template
 │
 ├── frontend/                         # Aster AI React + TypeScript Web App
-│   ├── src/
+│   ├── public/                       # Static public assets (favicon.svg)
+│   ├── src/                          # React application source code
 │   │   ├── components/               # Header, Sidebar, WelcomeView, ChatMessage, ToolCards
+│   │   ├── lib/                      # Utility functions
 │   │   ├── App.tsx                   # Main state & conversation manager
-│   │   └── index.css                 # Custom design tokens & grid styling
+│   │   ├── index.css                 # Custom design tokens & grid styling
+│   │   ├── main.tsx                  # React entry point
+│   │   └── types.ts                  # TypeScript interface definitions
+│   ├── index.html                    # Single-page HTML entry
 │   ├── package.json                  # Frontend dependencies
+│   ├── package-lock.json
 │   └── vite.config.ts                # Vite build configuration
 │
-├── .env.example                      # Root environment template
-├── .gitignore                        # Strict rules excluding secrets, node_modules, and caches
-└── README.md                         # Main documentation
+├── .gitignore                        # Central master gitignore excluding secrets and caches
+└── README.md                         # Main repository documentation
 ```
 
 ---
@@ -50,13 +57,12 @@ Aster AI is powered by a single Google ADK root agent (`personal_assistant`) reg
 
 ### 1. Environment Setup
 
-Clone this repository and configure your environment:
+Configure your Google Gemini API key:
 
 ```bash
-# Copy the example environment file
+cd task1_personal_assistant
 cp .env.example .env
-
-# Edit .env and paste your Google Gemini API key
+# Edit .env and paste your Google Gemini API key:
 # GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
