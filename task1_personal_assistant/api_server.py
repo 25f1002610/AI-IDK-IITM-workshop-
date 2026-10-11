@@ -19,6 +19,8 @@ from google.genai import types
 from pydantic import BaseModel
 
 # Load environment variables (.env)
+from pathlib import Path
+load_dotenv(Path(__file__).parent / ".env")
 load_dotenv()
 
 from personal_assistant.tools.calculator import calculate, calculator_tool
